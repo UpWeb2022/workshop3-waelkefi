@@ -1,4 +1,8 @@
 <h1>{{titleApp}}</h1>
+<button class="btn btn-outline-info" (click)="getStatProduct()"> Out of stock </button>
+<div class="alert alert-danger" *ngIf="alertStock!=null">
+  Alert out of stock : {{alertStock}}
+</div>
 <div class="form-group">
   <label>Search by price</label>
   <input name="priceMax" [(ngModel)]="priceMax" type="number" class="form-control">

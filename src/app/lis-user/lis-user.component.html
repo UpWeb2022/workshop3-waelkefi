@@ -1,42 +1,27 @@
+<button class="btn btn-outline-info" (click)="getStatTeacher()"> Get teachers number </button>
+<div class="alert alert-danger" *ngIf="teacherNumber!=null">
+    Tacher Number : {{teacherNumber}}
+  </div>
 <div class="row">
-    <div class="col-md-6 col-xl-3">
+    <div class="col-md-6 col-xl-3 "  *ngFor="let user of listUser">
         <div class="card m-b-30">
             <div class="card-body row">
                 <div class="col-6">
-                    <a href=""><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="img-fluid rounded-circle w-60"></a>
+                    <a href=""><img src="{{user.picture}}" alt="" class="img-fluid rounded-circle w-60"></a>
                 </div>
                 <div class="col-6 card-title align-self-center mb-0">
-                    <h5>Maria Stive</h5>
-                    <p class="m-0">Software Engineer</p>
+                    <h5>{{user.name}}</h5>
+                    <p class="m-0">{{user.job}}</p>
                 </div>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">maria@gmail.com</a></li>
-                <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : +33667789</li>
+                <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">{{user.email}}</a></li>
+                <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : {{user.phone}}</li>
             </ul>
             <div class="card-body" >
-                    <button class="btn btn-sm btn-danger">delete</button>
+                    <button class="btn btn-sm btn-danger" (click)="delete(user)">delete</button>
             </div>
         </div>
     </div>
-    <div class="col-md-6 col-xl-3">
-        <div class="card m-b-30">
-            <div class="card-body row">
-                <div class="col-6">
-                    <a href=""><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid rounded-circle w-60"></a>
-                </div>
-                <div class="col-6 card-title align-self-center mb-0">
-                    <h5>John Macro</h5>
-                    <p class="m-0">Teacher</p>
-                </div>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">john@gmail.com</a></li>
-                <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : +33667788</li>
-            </ul>
-            <div class="card-body" >
-                    <button class="btn btn-sm btn-danger">delete</button>
-            </div>
-        </div>
-    </div>
+    
 </div>

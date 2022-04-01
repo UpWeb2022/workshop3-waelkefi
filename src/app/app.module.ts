@@ -7,15 +7,13 @@ import { HeaderComponent } from './header/header.component';
 import { ListProductComponent } from './list-product/list-product.component';
 import {FormsModule} from "@angular/forms";
 import { LisUserComponent } from './lis-user/lis-user.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListProductComponent,
-    LisUserComponent,
-    NotFoundComponent
+    LisUserComponent
   ],
   imports: [
     BrowserModule,

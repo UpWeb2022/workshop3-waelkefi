@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../model/product";
+import { CalculService } from '../services/calcul.service';
 
 @Component({
   selector: 'app-list-product',
@@ -10,7 +11,8 @@ export class ListProductComponent implements OnInit {
   public titleApp: string;
   public listProduct:Product[];
   priceMax: number = 400;
-  constructor() {
+  alertStock: number;
+  constructor( private calculService : CalculService) {
   }
   ngOnInit(): void {
     this.titleApp= 'First Angular App';
@@ -52,6 +54,8 @@ export class ListProductComponent implements OnInit {
       }
     }
 
-
+getStatProduct() {
+this.alertStock = this.calculService.getStat(this.listProduct,  'quantity', 0)
+}
 
 }
